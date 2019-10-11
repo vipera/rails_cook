@@ -2,7 +2,7 @@
 
 An [Erlang][] library to verify and decrypt [Ruby on Rails][] session cookies.
 
-[Rails]: https://rubyonrails.org/
+[Ruby on Rails]: https://rubyonrails.org/
 [Erlang]: https://www.erlang.org
 
 ## Summary
