@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    container:
+      image: erlang:${{matrix.otp}}
+    name: OTP ${{matrix.otp}}
+    strategy:
+      matrix:
+        otp:
+          - 23
+          - 22
+    steps:
+      - uses: actions/checkout@v2
+      - name: Compile
+        run: rebar3 compile
+      - name: Test
+        run: rebar3 do eunit, ct

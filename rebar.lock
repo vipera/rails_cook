@@ -1,0 +1,8 @@
+{"1.2.0",
+[{<<"pbkdf2">>,{pkg,<<"pbkdf2">>,<<"2.0.0">>},0}]}.
+[
+{pkg_hash,[
+ {<<"pbkdf2">>, <<"11C23279FDED5C0027AB3996CFAE77805521D7EF4BABDE2BD7EC04A9086CF499">>}]},
+{pkg_hash_ext,[
+ {<<"pbkdf2">>, <<"1E793CE6FDB0576613115714DEAE9DFC1D1537EABA74F07EFB36DE139774488D">>}]}
+].

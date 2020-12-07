@@ -1,0 +1,15 @@
+{application, rails_cook,
+ [{description, "A library to verify and decrypt Ruby on Rails session cookies"},
+  {vsn, "0.1.0"},
+  {registered, []},
+  {applications, [kernel, stdlib]},
+  {env,[]},
+  {modules, []},
+
+  {maintainers, ["Marin Rukavina"]},
+  {licenses, ["BSD"]},
+  {links, [
+    {"Changelog", "https://github.com/vipera/rails_cook/blob/master/CHANGELOG.md"},
+    {"GitHub", "https://github.com/vipera/rails_cook"}
+  ]}
+ ]}.
