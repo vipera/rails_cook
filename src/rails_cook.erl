@@ -195,11 +195,12 @@ verify(rails_4, RailsKey, Cookie, Properties) ->
     undefined -> ?ENCRYPTED_SIGNED_COOKIE_SALT;
     Salt -> Salt
   end,
-  SigEncCookieKey = get_pbkdf2_key(RailsKey, CookieSalt, 64),
   HmacHashAlg = case get_hmac_hash_alg(Properties) of
     undefined -> sha;
     Alg -> Alg
   end,
+  {ok, HashBlockSize} = maps:find(block_size, crypto:hash_info(HmacHashAlg)),
+  SigEncCookieKey = get_pbkdf2_key(RailsKey, CookieSalt, HashBlockSize),
   <<Hmac:160/integer>> = crypto:mac(hmac, HmacHashAlg, SigEncCookieKey, CookieData),
   HexHmac = list_to_binary(lists:flatten(io_lib:format("~40.16.0b", [Hmac]))),
   if

@@ -1,3 +1,15 @@
+## 0.1.1 (upcoming)
+
+### Bug fixes
+
+- Base the Rails 4 HMAC verification's key generation on the block length of the
+  chosen digest algorithm.
+
+### Misc
+
+- Add tests for Rails 4 encryption and verification with ciphers/digest
+  algorithms other than AES-256-CBC/SHA1.
+
 ## 0.1.0 (2020-12-07)
 
 ### Feature changes
